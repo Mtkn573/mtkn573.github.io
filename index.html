@@ -92,13 +92,17 @@
             </div>
         </div>
     </div>
-    <div style="position: fixed; bottom: 0; cursor: pointer; width: 5%;">
+    <div style="position: fixed; bottom: 0; width: 5%;">
         <div style="font-size: 36px;">Language.</div>
-        <img id="changeToPolish" src="polandFlag.jpg">
+        <img id="changeToPolish" src="polandFlag.jpg" style="cursor: pointer;">
     </div>
     <div id="boxForCube" style="width: 50%;cursor:pointer"></div>
     <script>
+        if(localStorage.getItem('language') === 'pl') {
+            window.location.href = `polish.html`
+        }
         document.getElementById(`changeToPolish`).addEventListener(`click`, function () {
+            localStorage.setItem('language', 'pl')
             window.location.href = `polish.html`
         })
     </script>
